@@ -14,9 +14,9 @@ ResultSet rs=st.executeQuery("select * from mysql.user where user='"+userid+"'")
     { 
       if(rs.getString(2).equals(pwd)) 
       { 
-        out.println("welcome"+userid); 
+        out.println("Welcome "+userid); 
       } else { 
-        out.println("Invalid password try again"); 
+        out.println("Incorrect password. Try again"); 
       } 
     } else {
       out.println("User "+userid+" not found!");
