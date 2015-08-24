@@ -11,8 +11,7 @@
   if(rs.next()) 
   { 
      out.println("Welcome " + userid); 
-     out.println("<br/>"); 
-     out.println("Password hash: " + rs.getString(2)); 
+     out.println("<br/> Password hash: " + rs.getString(2)); 
   } else {
     out.println("User " + userid + " not found!");
   } 
