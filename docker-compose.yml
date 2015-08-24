@@ -1,12 +1,3 @@
-mysql:
-  image: mysql:latest
-  ports:
-   - "3306:3306"
-  volumes_from:
-   - dbdata
-  environment:
-    MYSQL_ROOT_PASSWORD: root
-
 web:
   build: .
   ports:
@@ -18,3 +9,12 @@ dbdata:
   image: debian:latest
   volumes:
    - /var/lib/mysql
+mysql:
+  image: mysql:latest
+  ports:
+   - "3306:3306"
+  volumes_from:
+   - dbdata
+  environment:
+    MYSQL_ROOT_PASSWORD: root
+
