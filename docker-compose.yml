@@ -18,4 +18,3 @@ mysql:
    - dbdata
   environment:
     MYSQL_ROOT_PASSWORD: root
-
