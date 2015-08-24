@@ -1,0 +1,20 @@
+mysql:
+  image: mysql:latest
+  ports:
+   - "3306:3306"
+  volumes_from:
+   - dbdata
+  environment:
+    MYSQL_ROOT_PASSWORD: root
+
+web:
+  build: .
+  ports:
+   - "8080:8080"
+  links:
+   - mysql:db
+
+dbdata:
+  image: debian:latest
+  volumes:
+   - /var/lib/mysql
