@@ -15,24 +15,28 @@ docker build -t anoop/tomcat .
 docker create -v /var/lib/mysql --name dbdata mysql /bin/true
 docker run -d -p 3306:3306 --volumes-from dbdata -e MYSQL_ROOT_PASSWORD=root --name mysql mysql
 ```
-	[To run in foreground: `docker run -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root --name mysql mysql`]
+	*[To run in foreground: `docker run -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root --name mysql mysql`]*
 
+Then, finally run this to bring tomcat (the app server) up.
 ```
 docker run -d -p 8080:8080 --link mysql:db --name web anoop/tomcat
 ```
-	[To run in foreground: `docker run -p 8080:8080 --link mysql:db --rm --name web anoop/tomcat`]
+	*[To run in foreground: `docker run -p 8080:8080 --link mysql:db --rm --name web anoop/tomcat`]*
 
-
+-----------------------------------------------------------------
 Open a browser and navigate to:
 http://localhost:8080/app/index.jsp?user=root
 
-Should display:
+*Should display:*
 
 #Hello World
 Welcome root 
+
 Password hash: *81F5E21E35407D884A6CD4A731AEBFB6AF209E1B
 
+-----------------------------------------------------------------
 http://localhost:8080/app/index.jsp?user=dkah
 
-Should display:
+*Should display:*
+
 User dkah not found!
