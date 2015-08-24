@@ -9,16 +9,13 @@ String pwd=request.getParameter("pwd");
 Class.forName("com.mysql.jdbc.Driver"); 
 java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://db:3306/mysql","root","root"); 
 Statement st= con.createStatement(); 
-ResultSet rs=st.executeQuery("select * from mysql.user where user='"+userid+"'"); 
+ResultSet rs=st.executeQuery("select user, password from mysql.user where user='"+userid+"'"); 
   if(rs.next()) 
-    { 
-      if(rs.getString(2).equals(pwd)) 
-      { 
-        out.println("Welcome "+userid); 
-      } else { 
-        out.println("Incorrect password. Try again"); 
-      } 
-    } else {
-      out.println("User "+userid+" not found!");
-    } 
+  { 
+     out.println("Welcome "+userid); 
+     out.println("<br/>"); 
+     out.println("Password hash: " + rs.getString(2)); 
+  } else {
+    out.println("User "+userid+" not found!");
+  } 
 %>
