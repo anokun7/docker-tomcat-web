@@ -9,6 +9,7 @@ dbdata:
   image: debian:latest
   volumes:
    - /var/lib/mysql
+   
 mysql:
   image: mysql:latest
   ports:
