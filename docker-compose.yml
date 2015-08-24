@@ -9,6 +9,7 @@ dbdata:
   image: debian:latest
   volumes:
    - /var/lib/mysql
+   
 mysql:
   image: mysql:latest
   ports:
@@ -17,4 +18,3 @@ mysql:
    - dbdata
   environment:
     MYSQL_ROOT_PASSWORD: root
-
