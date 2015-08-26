@@ -2,7 +2,7 @@ Uses docker containers to provision a simple application with a web front end - 
 
 The application takes as input, a request parameter - user and returns the user's password hash as stored in the database. If the user is not found it will say so.
 
-To run the docker containers, use docke-compose like this:
+To run the docker containers, use docker-compose in the root directory like this:
 ```
 docker-compose up -d
 ```
