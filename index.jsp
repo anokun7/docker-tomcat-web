@@ -18,6 +18,7 @@
       out.println("User " + userid + " not found!");
     } 
   } finally {
+    con.close();
     rs.close();
     st.close();
   }
