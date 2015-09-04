@@ -1,5 +1,5 @@
 web:
-  image: centos7.docker.demo/webapp:latest
+  image: .
   ports:
    - "8080:8080"
   links:
@@ -10,7 +10,6 @@ dbdata:
   volumes:
    - /var/lib/mysql
    
-
 mysql:
   image: mysql:latest
   ports:
