@@ -10,6 +10,7 @@ dbdata:
   volumes:
    - /var/lib/mysql
    
+
 mysql:
   image: mysql:latest
   ports:
