@@ -1,5 +1,5 @@
 <body style="color: red; background-color: #000">
-<h1>Hello World</h1>
+<h2>Hello World</h2>
 
 <%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
