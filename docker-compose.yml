@@ -6,7 +6,7 @@ web:
    - mysql:db
 
 dbdata:
-  image: debian:latest
+  image: mysql:latest
   volumes:
    - /var/lib/mysql
    
